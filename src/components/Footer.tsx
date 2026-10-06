@@ -1,16 +1,20 @@
 import React from 'react';
-import { Compass } from 'lucide-react';
+import { Compass, Sun, Moon } from 'lucide-react';
 
 interface FooterProps {
   onOpenPrivacyTerms: () => void;
   onExplorePrototype: () => void;
   onJoinResearch: () => void;
+  isDark?: boolean;
+  onToggleTheme?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenPrivacyTerms,
   onExplorePrototype,
   onJoinResearch,
+  isDark = false,
+  onToggleTheme,
 }) => {
   const footerLinks = [
     { label: 'Home', href: '#hero' },
@@ -47,19 +51,44 @@ export const Footer: React.FC<FooterProps> = ({
             </p>
           </div>
 
-          {/* Clean text navigation links */}
-          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-300">
-            {footerLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="hover:text-[#FFDE70] transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          {/* Clean text navigation links + Footer Theme Switch */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-300">
+              {footerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="hover:text-[#FFDE70] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            {onToggleTheme && (
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+                <button
+                  onClick={() => isDark && onToggleTheme()}
+                  className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all ${
+                    !isDark ? 'bg-[#173B64] text-white font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  <Sun className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Terang</span>
+                </button>
+                <button
+                  onClick={() => !isDark && onToggleTheme()}
+                  className={`flex items-center gap-1 px-2.5 py-1 rounded-lg transition-all ${
+                    isDark ? 'bg-[#FFDE70] text-[#173B64] font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  <Moon className="w-3.5 h-3.5" />
+                  <span>Gelap</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Bottom credits & honest competition notices */}

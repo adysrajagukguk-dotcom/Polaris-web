@@ -15,12 +15,12 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
 
   return (
     <div
-      className={`relative w-full h-full bg-gradient-to-b from-[#DCEAF8] via-[#F4F8FD] to-[#DCEAF8] text-slate-800 flex flex-col justify-between overflow-hidden select-none font-sans text-left ${className}`}
+      className={`relative w-full h-full bg-gradient-to-b from-[#DCEAF8] via-[#F4F8FD] to-[#DCEAF8] dark:from-[#0B1726] dark:via-[#112238] dark:to-[#0B1726] text-slate-800 dark:text-slate-100 flex flex-col justify-between overflow-hidden select-none font-sans text-left transition-colors duration-300 ${className}`}
     >
       {/* Background Celestial Wave Lines & Constellation Star Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft flowing wave SVGs */}
-        <svg className="absolute top-20 left-0 w-full h-96 opacity-60" viewBox="0 0 375 400" fill="none">
+        <svg className="absolute top-20 left-0 w-full h-96 opacity-60 dark:opacity-30" viewBox="0 0 375 400" fill="none">
           <path
             d="M-50 120 C 60 70, 160 220, 280 140 C 340 100, 390 180, 450 160"
             stroke="#A3C4EB"
@@ -50,28 +50,28 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
       </div>
 
       {/* 1. Android Status Bar */}
-      <div className="relative z-10 pt-2.5 px-6 flex items-center justify-between text-[11px] font-semibold text-slate-600">
+      <div className="relative z-10 pt-2.5 px-6 flex items-center justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
         <div className="flex items-center gap-1.5">
           <span>4:27</span>
-          <svg className="w-3 h-3 text-slate-500 fill-current opacity-80" viewBox="0 0 24 24">
+          <svg className="w-3 h-3 text-slate-500 dark:text-slate-400 fill-current opacity-80" viewBox="0 0 24 24">
             <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
           </svg>
         </div>
         <div className="flex items-center gap-1.5">
           {/* Signal */}
           <div className="flex items-end gap-0.5 h-2.5">
-            <span className="w-0.5 h-1 bg-slate-600 rounded-2xs" />
-            <span className="w-0.5 h-1.5 bg-slate-600 rounded-2xs" />
-            <span className="w-0.5 h-2 bg-slate-600 rounded-2xs" />
-            <span className="w-0.5 h-2.5 bg-slate-600 rounded-2xs" />
+            <span className="w-0.5 h-1 bg-slate-600 dark:bg-slate-300 rounded-2xs" />
+            <span className="w-0.5 h-1.5 bg-slate-600 dark:bg-slate-300 rounded-2xs" />
+            <span className="w-0.5 h-2 bg-slate-600 dark:bg-slate-300 rounded-2xs" />
+            <span className="w-0.5 h-2.5 bg-slate-600 dark:bg-slate-300 rounded-2xs" />
           </div>
           {/* Wifi */}
-          <svg className="w-3.5 h-3.5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.44 9.52 3.8L12 19.12 2.48 11.3C4.98 8.94 8.33 7.5 12 7.5z" />
           </svg>
           {/* Battery */}
-          <div className="w-5 h-2.5 rounded-2xs border border-slate-600 p-0.5 flex items-center">
-            <div className="w-full h-full bg-slate-600 rounded-3xs" />
+          <div className="w-5 h-2.5 rounded-2xs border border-slate-600 dark:border-slate-300 p-0.5 flex items-center">
+            <div className="w-full h-full bg-slate-600 dark:bg-slate-300 rounded-3xs" />
           </div>
         </div>
       </div>
@@ -83,15 +83,15 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* Gray avatar circle with silhouette */}
-            <div className="w-12 h-12 rounded-full bg-slate-200/90 border border-slate-300/60 flex items-center justify-center text-slate-500 shadow-xs">
-              <User className="w-6 h-6 stroke-[2] text-slate-500" />
+            <div className="w-12 h-12 rounded-full bg-slate-200/90 dark:bg-slate-700/80 border border-slate-300/60 dark:border-slate-600 flex items-center justify-center text-slate-500 dark:text-slate-300 shadow-xs">
+              <User className="w-6 h-6 stroke-[2]" />
             </div>
             <div>
-              <div className="text-[11px] font-medium text-slate-500">Friday, 2 October 2026</div>
-              <h2 className="text-xl font-extrabold text-[#173B64] tracking-tight leading-tight">
+              <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400">Friday, 2 October 2026</div>
+              <h2 className="text-xl font-extrabold text-[#173B64] dark:text-[#F6FAFF] tracking-tight leading-tight">
                 Hello, Chris
               </h2>
-              <p className="text-[11px] text-slate-500 leading-tight">
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight">
                 Small steps today, big changes tomorrow.
               </p>
             </div>
@@ -112,33 +112,33 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           {/* Orbits and Compass SVG */}
           <div className="relative w-44 h-44 flex items-center justify-center my-1">
             {/* Outer dotted orbit */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-[#A3C4EB]/70 animate-[spin_60s_linear_infinite]" />
+            <div className="absolute inset-0 rounded-full border border-dashed border-[#A3C4EB]/70 dark:border-[#A3C4EB]/40 animate-[spin_60s_linear_infinite]" />
             {/* Orbit dot */}
-            <div className="absolute top-2 left-10 w-2 h-2 rounded-full bg-[#173B64]/70 shadow-xs" />
+            <div className="absolute top-2 left-10 w-2 h-2 rounded-full bg-[#173B64]/70 dark:bg-[#A3C4EB] shadow-xs" />
             <div className="absolute bottom-6 right-8 w-2 h-2 rounded-full bg-[#FFDE70]" />
 
             {/* Inner faint orbit */}
-            <div className="absolute inset-5 rounded-full border border-dashed border-[#A3C4EB]/60" />
-            <div className="absolute top-8 right-6 w-1.5 h-1.5 rounded-full bg-[#173B64]/60" />
+            <div className="absolute inset-5 rounded-full border border-dashed border-[#A3C4EB]/60 dark:border-[#A3C4EB]/30" />
+            <div className="absolute top-8 right-6 w-1.5 h-1.5 rounded-full bg-[#173B64]/60 dark:bg-[#A3C4EB]/70" />
 
             {/* Glowing disc background */}
-            <div className="w-24 h-24 rounded-full bg-[#A3C4EB]/30 backdrop-blur-xs flex items-center justify-center shadow-inner">
-              <div className="w-16 h-16 rounded-full bg-white/90 shadow-md flex items-center justify-center">
+            <div className="w-24 h-24 rounded-full bg-[#A3C4EB]/30 dark:bg-[#1E3A5F]/50 backdrop-blur-xs flex items-center justify-center shadow-inner">
+              <div className="w-16 h-16 rounded-full bg-white/90 dark:bg-[#13263B] shadow-md flex items-center justify-center">
                 {/* 8-Pointed Polaris Compass Star */}
                 <div className="w-8 h-8 text-[#FFDE70] drop-shadow-xs">
                   <svg viewBox="0 0 40 40" fill="currentColor">
                     <path d="M20 0 L22.8 15.2 L38 20 L22.8 24.8 L20 40 L17.2 24.8 L2 20 L17.2 15.2 Z" />
-                    <circle cx="20" cy="20" r="3.5" fill="#173B64" />
+                    <circle cx="20" cy="20" r="3.5" fill="#173B64" className="dark:fill-[#FFDE70]" />
                   </svg>
                 </div>
               </div>
             </div>
           </div>
 
-          <h3 className="text-lg font-extrabold text-[#173B64] tracking-tight mb-1">
+          <h3 className="text-lg font-extrabold text-[#173B64] dark:text-[#F6FAFF] tracking-tight mb-1">
             Start with one direction.
           </h3>
-          <p className="text-xs text-slate-600 max-w-[270px] leading-relaxed mb-4">
+          <p className="text-xs text-slate-600 dark:text-slate-300 max-w-[270px] leading-relaxed mb-4">
             Your goals give you focus. Choose what matters most to you.
           </p>
 
@@ -155,12 +155,12 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
         <div>
           <div className="flex items-center justify-between mb-1">
             <div>
-              <h4 className="text-base font-bold text-[#173B64] leading-tight">Life Balance</h4>
-              <p className="text-[10px] text-slate-500">
+              <h4 className="text-base font-bold text-[#173B64] dark:text-[#F6FAFF] leading-tight">Life Balance</h4>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400">
                 Based on your completed activities • Tap for overview
               </p>
             </div>
-            <button className="text-xs font-bold text-[#173B64] flex items-center gap-0.5 hover:underline">
+            <button className="text-xs font-bold text-[#173B64] dark:text-[#FFDE70] flex items-center gap-0.5 hover:underline">
               <span>Overview</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
@@ -176,8 +176,8 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
                   onClick={() => setSelectedTimeRange(tab)}
                   className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-all whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#173B64] text-white shadow-xs font-bold'
-                      : 'bg-white/90 text-slate-600 border border-slate-200/60 hover:bg-white'
+                      ? 'bg-[#173B64] dark:bg-[#FFDE70] text-white dark:text-[#173B64] shadow-xs font-bold'
+                      : 'bg-white/90 dark:bg-[#13263B] text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700 hover:bg-white dark:hover:bg-[#1E3A5F]'
                   }`}
                 >
                   {tab}
@@ -187,7 +187,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           </div>
 
           {/* Life Balance Pentagon Radar Card */}
-          <div className="bg-white rounded-2xl p-3.5 border border-slate-200/60 shadow-xs flex items-center justify-between gap-3">
+          <div className="bg-white dark:bg-[#13263B] rounded-2xl p-3.5 border border-slate-200/60 dark:border-slate-700/80 shadow-xs flex items-center justify-between gap-3">
             {/* Pentagon Radar Chart SVG */}
             <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
               <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -227,41 +227,41 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
-                  <span className="font-semibold text-slate-700">Academic</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">Academic</span>
                 </div>
-                <span className="text-slate-500 font-medium tabular-nums">0%</span>
+                <span className="text-slate-500 dark:text-slate-400 font-medium tabular-nums">0%</span>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-                  <span className="font-semibold text-slate-700">Career</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">Career</span>
                 </div>
-                <span className="text-slate-500 font-medium tabular-nums">0%</span>
+                <span className="text-slate-500 dark:text-slate-400 font-medium tabular-nums">0%</span>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#10B981]" />
-                  <span className="font-semibold text-slate-700">Social & Organization</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">Social & Organization</span>
                 </div>
-                <span className="text-slate-500 font-medium tabular-nums">0%</span>
+                <span className="text-slate-500 dark:text-slate-400 font-medium tabular-nums">0%</span>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#6366F1]" />
-                  <span className="font-semibold text-slate-700">Well-being</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">Well-being</span>
                 </div>
-                <span className="text-slate-500 font-medium tabular-nums">0%</span>
+                <span className="text-slate-500 dark:text-slate-400 font-medium tabular-nums">0%</span>
               </div>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
-                  <span className="font-semibold text-slate-700">Personal Growth</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">Personal Growth</span>
                 </div>
-                <span className="text-slate-500 font-medium tabular-nums">0%</span>
+                <span className="text-slate-500 dark:text-slate-400 font-medium tabular-nums">0%</span>
               </div>
             </div>
           </div>
@@ -270,16 +270,16 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
         {/* 5. Today Section */}
         <div className="pb-1">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="text-base font-bold text-[#173B64]">Today</h4>
-            <span className="text-xs text-slate-500 font-medium">See all (0)</span>
+            <h4 className="text-base font-bold text-[#173B64] dark:text-[#F6FAFF]">Today</h4>
+            <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">See all (0)</span>
           </div>
 
-          <div className="bg-white rounded-2xl p-3.5 border border-slate-200/60 shadow-xs flex items-center justify-between">
+          <div className="bg-white dark:bg-[#13263B] rounded-2xl p-3.5 border border-slate-200/60 dark:border-slate-700/80 shadow-xs flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[#E8F1FC] flex items-center justify-center text-[#173B64]">
+              <div className="w-9 h-9 rounded-xl bg-[#E8F1FC] dark:bg-[#173B64]/50 flex items-center justify-center text-[#173B64] dark:text-[#FFDE70]">
                 <Calendar className="w-4 h-4 stroke-[2.2]" />
               </div>
-              <span className="text-xs font-bold text-[#173B64]">
+              <span className="text-xs font-bold text-[#173B64] dark:text-[#F6FAFF]">
                 No activities scheduled for today.
               </span>
             </div>
@@ -290,19 +290,19 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
       </div>
 
       {/* 6. Bottom Navigation Bar */}
-      <div className="relative z-20 bg-white/95 backdrop-blur-md border-t border-slate-200/70 pt-2 pb-2 px-3 flex flex-col">
+      <div className="relative z-20 bg-white/95 dark:bg-[#0D1B2A]/95 backdrop-blur-md border-t border-slate-200/70 dark:border-slate-800 pt-2 pb-2 px-3 flex flex-col">
         <div className="flex items-center justify-around">
           
           {/* Home Tab (Active) */}
           <button
             onClick={() => setActiveBottomTab('Home')}
             className={`flex flex-col items-center gap-0.5 ${
-              activeBottomTab === 'Home' ? 'text-[#173B64] font-bold' : 'text-slate-400'
+              activeBottomTab === 'Home' ? 'text-[#173B64] dark:text-[#FFDE70] font-bold' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             <div
               className={`px-3 py-1 rounded-full transition-colors ${
-                activeBottomTab === 'Home' ? 'bg-[#A3C4EB]/35 text-[#173B64]' : ''
+                activeBottomTab === 'Home' ? 'bg-[#A3C4EB]/35 dark:bg-[#173B64]/70 text-[#173B64] dark:text-[#FFDE70]' : ''
               }`}
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -316,7 +316,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           <button
             onClick={() => setActiveBottomTab('Goals')}
             className={`flex flex-col items-center gap-0.5 ${
-              activeBottomTab === 'Goals' ? 'text-[#173B64] font-bold' : 'text-slate-400'
+              activeBottomTab === 'Goals' ? 'text-[#173B64] dark:text-[#FFDE70] font-bold' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             <div className="p-1">
@@ -329,7 +329,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           <button
             onClick={() => setActiveBottomTab('Activities')}
             className={`flex flex-col items-center gap-0.5 ${
-              activeBottomTab === 'Activities' ? 'text-[#173B64] font-bold' : 'text-slate-400'
+              activeBottomTab === 'Activities' ? 'text-[#173B64] dark:text-[#FFDE70] font-bold' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             <div className="p-1">
@@ -342,7 +342,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           <button
             onClick={() => setActiveBottomTab('AI')}
             className={`flex flex-col items-center gap-0.5 ${
-              activeBottomTab === 'AI' ? 'text-[#173B64] font-bold' : 'text-slate-400'
+              activeBottomTab === 'AI' ? 'text-[#173B64] dark:text-[#FFDE70] font-bold' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             <div className="p-1">
@@ -355,7 +355,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
           <button
             onClick={() => setActiveBottomTab('Profile')}
             className={`flex flex-col items-center gap-0.5 ${
-              activeBottomTab === 'Profile' ? 'text-[#173B64] font-bold' : 'text-slate-400'
+              activeBottomTab === 'Profile' ? 'text-[#173B64] dark:text-[#FFDE70] font-bold' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             <div className="p-1">
@@ -367,7 +367,7 @@ export const PolarisPhoneMockup: React.FC<PolarisPhoneMockupProps> = ({
         </div>
 
         {/* Android Navigation Home Bar */}
-        <div className="w-28 h-1 bg-slate-800 rounded-full mx-auto mt-2" />
+        <div className="w-28 h-1 bg-slate-800 dark:bg-slate-400 rounded-full mx-auto mt-2" />
       </div>
 
     </div>

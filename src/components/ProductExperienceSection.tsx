@@ -49,7 +49,7 @@ export const ProductExperienceSection: React.FC = () => {
                 Tampilan Sign-In User
               </span>
               <div className="p-2 rounded-lg bg-[#F6FAFF] dark:bg-[#0D1B2A] text-xs text-slate-700 dark:text-slate-300 flex justify-between items-center">
-                <span>leo@politeknik.ac.id</span>
+                <span>chris@politeknik.ac.id</span>
                 <span className="text-emerald-600 font-bold text-[10px]">Terverifikasi ✓</span>
               </div>
             </div>

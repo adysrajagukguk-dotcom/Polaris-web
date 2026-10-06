@@ -81,14 +81,36 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Zone 3: 1-2 primary actions + theme switch */}
-        <div className="hidden sm:flex items-center gap-3">
-          <button
-            onClick={onToggleTheme}
-            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-[#A3C4EB]/20 dark:hover:bg-[#173B64]/40 transition-colors"
-          >
-            {isDark ? <Sun className="w-4 h-4 text-[#FFDE70]" /> : <Moon className="w-4 h-4 text-[#173B64]" />}
-          </button>
+        <div className="hidden lg:flex items-center gap-3">
+          {/* Segmented Light/Dark Mode Switcher */}
+          <div className="flex items-center p-1 rounded-xl bg-slate-200/60 dark:bg-[#13263B] border border-[#A3C4EB]/30 dark:border-slate-700/80 transition-colors">
+            <button
+              onClick={() => isDark && onToggleTheme()}
+              aria-label="Aktifkan Mode Terang"
+              title="Mode Terang (Light)"
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                !isDark
+                  ? 'bg-white text-[#173B64] shadow-xs font-bold'
+                  : 'text-slate-500 hover:text-slate-300'
+              }`}
+            >
+              <Sun className="w-3.5 h-3.5 text-amber-500" />
+              <span>Terang</span>
+            </button>
+            <button
+              onClick={() => !isDark && onToggleTheme()}
+              aria-label="Aktifkan Mode Gelap"
+              title="Mode Gelap (Dark)"
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+                isDark
+                  ? 'bg-[#173B64] text-[#FFDE70] shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Moon className="w-3.5 h-3.5 text-[#FFDE70]" />
+              <span>Gelap</span>
+            </button>
+          </div>
 
           <button
             onClick={onJoinResearch}
@@ -105,14 +127,26 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
 
-        {/* Mobile menu & theme trigger */}
+        {/* Medium and Mobile menu & quick theme toggle */}
         <div className="flex items-center gap-2 lg:hidden">
+          {/* Quick theme button for mobile header */}
           <button
             onClick={onToggleTheme}
-            aria-label="Toggle theme"
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300"
+            aria-label={isDark ? 'Beralih ke mode terang' : 'Beralih ke mode gelap'}
+            title={isDark ? 'Mode Terang' : 'Mode Gelap'}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-200/60 dark:bg-[#13263B] border border-[#A3C4EB]/30 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-200"
           >
-            {isDark ? <Sun className="w-4 h-4 text-[#FFDE70]" /> : <Moon className="w-4 h-4 text-[#173B64]" />}
+            {isDark ? (
+              <>
+                <Sun className="w-4 h-4 text-[#FFDE70]" />
+                <span className="hidden xs:inline text-[11px]">Terang</span>
+              </>
+            ) : (
+              <>
+                <Moon className="w-4 h-4 text-[#173B64]" />
+                <span className="hidden xs:inline text-[11px]">Gelap</span>
+              </>
+            )}
           </button>
 
           <button
@@ -128,6 +162,41 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden px-4 pt-2 pb-6 border-b border-[#A3C4EB]/30 dark:border-[#173B64]/60 bg-[#F6FAFF] dark:bg-[#0D1B2A] shadow-lg animate-in fade-in duration-150">
+          {/* Explicit Theme Mode Switcher in Mobile Drawer */}
+          <div className="py-3 px-2 mb-2 rounded-xl bg-white/70 dark:bg-[#13263B]/70 border border-[#A3C4EB]/30 dark:border-slate-800 flex items-center justify-between">
+            <span className="text-xs font-bold text-slate-700 dark:text-slate-200">
+              Tema Tampilan:
+            </span>
+            <div className="flex gap-1.5">
+              <button
+                onClick={() => {
+                  if (isDark) onToggleTheme();
+                }}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  !isDark
+                    ? 'bg-[#173B64] text-white shadow-xs font-bold'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
+                }`}
+              >
+                <Sun className="w-3.5 h-3.5 text-amber-500" />
+                <span>Terang</span>
+              </button>
+              <button
+                onClick={() => {
+                  if (!isDark) onToggleTheme();
+                }}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  isDark
+                    ? 'bg-[#FFDE70] text-[#173B64] shadow-xs font-bold'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                <Moon className="w-3.5 h-3.5 text-[#173B64]" />
+                <span>Gelap</span>
+              </button>
+            </div>
+          </div>
+
           <nav className="flex flex-col gap-3 py-3 border-b border-[#A3C4EB]/20 dark:border-slate-800">
             {navLinks.map((link) => (
               <a

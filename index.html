@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('polaris_theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POLARIS – Goal-Oriented Life Management Ecosystem</title>
@@ -49,7 +65,7 @@
       }
     </script>
   </head>
-  <body class="bg-[#F6FAFF] text-[#173B64] antialiased selection:bg-[#FFDE70] selection:text-[#173B64] transition-colors duration-300">
+  <body class="bg-[#F6FAFF] dark:bg-[#0B1726] text-[#173B64] dark:text-[#F6FAFF] antialiased selection:bg-[#FFDE70] selection:text-[#173B64] transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
