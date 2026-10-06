@@ -1,0 +1,6 @@
+{
+  "name": "POLARIS – Goal-Oriented Life Management Ecosystem",
+  "description": "Connect daily activities with your life goals. A goal-oriented life management ecosystem designed for students and young adults balancing academics, career, and well-being.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
